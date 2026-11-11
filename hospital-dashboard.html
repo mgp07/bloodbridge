@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard | BloodBridge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="hospital-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">Blood<span>Bridge</span></div>
+            <p class="brand-tagline">Hospital Portal</p>
+
+            <nav class="sidebar-menu">
+
+                <a href="#dashboard" class="menu-item active">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#incomingRequests" class="menu-item">
+                    <i class="fas fa-inbox"></i>
+                    <span>Incoming Requests</span>
+                </a>
+
+                <a href="#acceptedRequests" class="menu-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Accepted Requests</span>
+                </a>
+
+                <a href="#completedRequests" class="menu-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Completed Requests</span>
+                </a>
+
+                <a href="#profile" class="menu-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>Hospital Profile</span>
+                </a>
+
+                <a href="#notifications" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutButton">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar" id="dashboard">
+
+                <div>
+                    <h2>Hospital Dashboard</h2>
+                    <p>Manage blood requests and save lives.</p>
+                </div>
+
+                <button id="notificationButton">
+                    <i class="fas fa-bell"></i>
+                </button>
+
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-banner">
+
+                <div>
+                    <h1>Welcome, <span id="hospitalName">Demo Hospital</span>!</h1>
+                    <p>Thank you for being a part of the BloodBridge network.</p>
+                </div>
+
+                <i class="fas fa-hospital"></i>
+
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <h3 id="totalRequests">0</h3>
+                    <p>Total Requests</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 id="pendingRequests">0</h3>
+                    <p>Pending Requests</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 id="acceptedRequestsCount">0</h3>
+                    <p>Accepted Requests</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 id="completedRequestsCount">0</h3>
+                    <p>Completed Requests</p>
+                </div>
+
+            </section>
+
+            <!-- Incoming Requests -->
+            <section class="content-card" id="incomingRequests">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-inbox"></i>
+                    Incoming Blood Requests
+                </h3>
+
+                <div class="filter-grid">
+
+                    <div class="form-group">
+                        <label for="filterBloodGroup">Blood Group</label>
+                        <select id="filterBloodGroup">
+                            <option value="">All Blood Groups</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterUrgency">Urgency</label>
+                        <select id="filterUrgency">
+                            <option value="">All Urgency Levels</option>
+                            <option>Normal</option>
+                            <option>Urgent</option>
+                            <option>Emergency</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div id="incomingRequestList" class="request-list">
+                    <div class="empty-state">
+                        No incoming requests available.
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Accepted Requests -->
+            <section class="content-card" id="acceptedRequests">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-check-circle"></i>
+                    Accepted Requests
+                </h3>
+
+                <div id="acceptedRequestList" class="request-list">
+                    <div class="empty-state">
+                        No accepted requests yet.
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Completed Requests -->
+            <section class="content-card" id="completedRequests">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-clipboard-check"></i>
+                    Completed Requests
+                </h3>
+
+                <div id="completedRequestList" class="request-list">
+                    <div class="empty-state">
+                        No completed requests yet.
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Hospital Profile -->
+            <section class="content-card" id="profile">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-hospital"></i>
+                    Hospital Profile
+                </h3>
+
+                <div class="profile-grid">
+
+                    <div class="profile-field">
+                        <label>Hospital Name</label>
+                        <p id="profileHospitalName">Demo Hospital</p>
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Email Address</label>
+                        <p id="profileEmail">hospital@example.com</p>
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Contact Number</label>
+                        <p id="profilePhone">9876543210</p>
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Registration Number</label>
+                        <p id="profileRegistration">HOSP12345</p>
+                    </div>
+
+                    <div class="profile-field">
+                        <label>City</label>
+                        <p id="profileCity">Mangalore</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Notifications -->
+            <section class="content-card" id="notifications">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-bell"></i>
+                    Notifications
+                </h3>
+
+                <div id="notificationList" class="notification-list">
+                    <div class="empty-state">
+                        No new notifications.
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="dashboard-footer">
+                <p>© 2026 BloodBridge | Connecting Lives, Saving Lives.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="hospital-dashboard.js"></script>
+
+</body>
+
+</html>

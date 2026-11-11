@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BloodBridge | Connecting Lives</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="navbar" id="home">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-droplet"></i>
+                <span>+</span>
+            </div>
+
+            <div class="logo-text">
+                <h1>BloodBridge</h1>
+                <p>Connect • Donate • Save Lives</p>
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <a href="index.html" class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
+
+            <a href="find-donors.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Find Donors
+            </a>
+
+            <a href="login.html">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="register.html">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+
+            <a href="#requestForm" onclick="showForm('requestForm'); return false;">
+                <i class="fa-solid fa-droplet"></i>
+                Request Blood
+            </a>
+
+            <a href="#contact">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+
+        </nav>
+
+        <a href="register.html" class="join-btn">
+            Join Us
+            <i class="fa-solid fa-heart"></i>
+        </a>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <main>
+
+        <section class="hero" id="about">
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    Be a Hero. Donate Blood.
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h2 class="hero-title">
+                    Blood<span>Bridge</span>
+                    <i class="fa-solid fa-heart-pulse heartbeat"></i>
+                </h2>
+
+                <h3 class="hero-heading">
+                    Connecting Donors.
+                    Supporting Patients.
+                    <span>Saving Lives.</span>
+                </h3>
+
+                <p class="hero-description">
+                    A small act of kindness can make a big difference.
+                    Donate blood and help someone in need today.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="register.html" class="primary-btn">
+                        <i class="fa-solid fa-droplet"></i>
+                        Register as Donor
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <button class="secondary-btn" onclick="showForm('requestForm')">
+
+                        <i class="fa-solid fa-hand-holding-droplet"></i>
+                        Request Blood
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO IMAGE / ILLUSTRATION -->
+
+            <div class="hero-visual">
+
+                <div class="world-map">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="heart-decoration">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="blood-drop-art">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>+</span>
+                </div>
+
+                <div class="hands-art">
+                    <i class="fa-solid fa-hands-holding-circle"></i>
+                </div>
+
+                <div class="hero-quote">
+                    <h2>Give Blood...</h2>
+                    <h2>Give Hope...</h2>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURE CARDS -->
+
+        <section class="features" id="find-donors">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>Save Lives</h3>
+
+                <p>Your donation can save up to 3 lives!</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>Support Patients</h3>
+
+                <p>Be the reason someone gets a second chance.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h3>Build a Healthier Community</h3>
+
+                <p>Together for a healthier tomorrow.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <h3>Safe & Reliable</h3>
+
+                <p>Trusted platform for blood donation and requests.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DONOR REGISTRATION FORM -->
+
+        <section class="form-container" id="donorForm">
+
+            <h2>
+                <i class="fa-solid fa-droplet"></i>
+                Donor Registration
+            </h2>
+
+            <p class="form-description">
+                Become a lifesaver. Register as a blood donor.
+            </p>
+
+            <form id="donorRegistration">
+
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your full name" required>
+
+
+                <label>Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+
+                <label>Calculated Age</label>
+                <input type="number" id="calculatedAge" name="age" placeholder="Age will be calculated" readonly>
+
+                <p id="ageMessage" class="error-message"></p>
+
+
+                <label>Blood Group</label>
+
+                <select name="bloodGroup" required>
+                    <option value="">Select blood group</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+
+
+                <label>Phone Number</label>
+
+                <input type="tel" name="phone" placeholder="10-digit phone number" pattern="[0-9]{10}" maxlength="10"
+                    required>
+
+
+                <label>Location</label>
+
+                <input type="text" name="location" placeholder="Enter your location" required>
+
+
+                <label>Have you donated blood before?</label>
+
+                <select id="donationHistory" name="donationHistory" required>
+                    <option value="">Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Never donated">Never donated</option>
+                </select>
+
+
+                <div id="lastDonationSection" class="hidden">
+
+                    <label>Last Blood Donation Date</label>
+
+                    <input type="date" id="lastDonationDate" name="lastDonationDate">
+
+                    <p class="info-message">
+                        Enter your most recent blood donation date.
+                    </p>
+
+                </div>
+
+                <p id="donationMessage" class="error-message"></p>
+
+
+                <label>Availability</label>
+
+                <select name="availability" required>
+                    <option value="">Select availability</option>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+
+
+                <p class="info-message">
+                    Registration does not guarantee medical eligibility.
+                    Final eligibility must be confirmed by qualified
+                    blood-bank staff.
+                </p>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <p id="donorMessage" class="message"></p>
+
+            <button class="close-btn" onclick="closeForms()">
+                Close
+            </button>
+
+        </section>
+
+
+        <!-- BLOOD REQUEST FORM -->
+
+        <section class="form-container" id="requestForm">
+
+            <h2>
+                <i class="fa-solid fa-heart"></i>
+                Request Blood
+            </h2>
+
+            <p class="form-description">
+                Request blood for someone who needs help.
+            </p>
+
+            <form id="bloodRequest">
+
+                <label>Patient Name</label>
+
+                <input type="text" name="patientName" placeholder="Enter patient name" required>
+
+
+                <label>Required Blood Group</label>
+
+                <select name="bloodGroup" required>
+                    <option value="">Select blood group</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+
+
+                <label>Units Required</label>
+
+                <input type="number" name="units" min="1" max="20" placeholder="Number of units" required>
+
+
+                <label>Hospital Name</label>
+
+                <input type="text" name="hospital" placeholder="Enter hospital name" required>
+
+
+                <label>Location</label>
+
+                <input type="text" name="location" placeholder="Enter hospital location" required>
+
+
+                <label>Contact Number</label>
+
+                <input type="tel" name="phone" placeholder="10-digit contact number" pattern="[0-9]{10}" maxlength="10"
+                    required>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Blood Request
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <p id="requestMessage" class="message"></p>
+
+            <button class="close-btn" onclick="closeForms()">
+                Close
+            </button>
+
+        </section>
+
+
+        <!-- SLOGAN BANNER -->
+
+        <section class="slogan-banner">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h2>
+                Donate Blood
+                <span>•</span>
+                Spread Kindness
+                <span>•</span>
+                Make a Difference
+                <i class="fa-solid fa-heart"></i>
+            </h2>
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <div class="footer-left">
+
+            <p>
+                © 2026 BloodBridge |
+                Connecting Lives
+                <i class="fa-solid fa-heart"></i>
+            </p>
+
+        </div>
+
+
+        <div class="social-icons">
+
+            <a href="#contact" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#contact" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#contact" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#contact" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

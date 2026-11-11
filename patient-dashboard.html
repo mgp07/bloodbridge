@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | BloodBridge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="patient-dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">
+                <i class="fa-solid fa-droplet"></i>
+                <span>+</span>
+            </span>
+            <span>BloodBridge</span>
+        </a>
+
+        <div class="sidebar-menu">
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <a href="#dashboard" class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#profile" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#createRequest" class="menu-item">
+                <i class="fa-solid fa-plus-circle"></i>
+                <span>Create Request</span>
+            </a>
+
+            <a href="#myRequests" class="menu-item">
+                <i class="fa-solid fa-droplet"></i>
+                <span>My Blood Requests</span>
+            </a>
+
+            <a href="#history" class="menu-item">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Request History</span>
+            </a>
+
+            <a href="#notifications" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="menu-item">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+
+            <button id="logoutButton" class="menu-item logout-button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h2>Patient Dashboard</h2>
+                <p>Manage your blood requests and stay updated.</p>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="notification-button" id="notificationButton" aria-label="View notifications">
+
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-dot"></span>
+
+                </button>
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h4 id="headerName">Patient</h4>
+                        <p>Patient Account</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section id="dashboard">
+
+            <!-- WELCOME BANNER -->
+            <div class="welcome-banner">
+
+                <div>
+                    <span class="welcome-label">PATIENT PORTAL</span>
+
+                    <h1>Hello, <span id="welcomeName">Patient</span> 👋</h1>
+
+                    <p>
+                        Find the blood you need and connect with
+                        people who are ready to help.
+                    </p>
+
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-hand-holding-medical"></i>
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon red-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Requests</p>
+                        <h2 id="totalRequests">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+
+                    <div>
+                        <p>Pending Requests</p>
+                        <h2 id="pendingRequests">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <p>Fulfilled Requests</p>
+                        <h2 id="fulfilledRequests">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <p>Required Blood Group</p>
+                        <h2 id="bloodGroup">--</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CREATE BLOOD REQUEST -->
+            <section id="createRequest" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Create Blood Request</h2>
+                        <p>Provide the details of the blood you need.</p>
+                    </div>
+                </div>
+
+                <form id="requestForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="requestBloodGroup">Blood Group</label>
+
+                            <select id="requestBloodGroup" required>
+                                <option value="">Select blood group</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="units">Units Required</label>
+
+                            <input type="number" id="units" min="1" max="20" placeholder="Enter number of units"
+                                required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="hospital">Hospital Name</label>
+
+                            <input type="text" id="hospital" placeholder="Enter hospital name" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+
+                            <input type="text" id="city" placeholder="Enter city" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+
+                            <select id="urgency" required>
+                                <option value="">Select urgency</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Emergency">Emergency</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="requiredDate">Required Date</label>
+
+                            <input type="date" id="requiredDate" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="requestReason">Additional Information</label>
+
+                        <textarea id="requestReason" rows="4"
+                            placeholder="Enter any additional details (optional)"></textarea>
+                    </div>
+
+
+                    <button type="submit" class="primary-button">
+                        Submit Blood Request
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p id="requestMessage" role="status"></p>
+
+                </form>
+
+            </section>
+
+
+            <!-- MY REQUESTS -->
+            <section id="myRequests" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>My Blood Requests</h2>
+                        <p>Track the status of your requests.</p>
+                    </div>
+                </div>
+
+                <div id="requestList" class="request-list">
+
+                    <div class="empty-state">
+                        <i class="fa-solid fa-droplet"></i>
+                        <p>No blood requests submitted yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE -->
+            <section id="profile" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>My Profile</h2>
+                        <p>Your registered patient information.</p>
+                    </div>
+                </div>
+
+                <div class="profile-grid">
+
+                    <div class="profile-field">
+                        <span>Full Name</span>
+                        <h4 id="profileName">Not available</h4>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Email Address</span>
+                        <h4 id="profileEmail">Not available</h4>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Phone Number</span>
+                        <h4 id="profilePhone">Not available</h4>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Blood Group</span>
+                        <h4 id="profileBloodGroup">Not available</h4>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>City</span>
+                        <h4 id="profileCity">Not available</h4>
+                    </div>
+
+                    <div class="profile-field">
+                        <span>Account Type</span>
+                        <h4>Patient</h4>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REQUEST HISTORY -->
+            <section id="history" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Request History</h2>
+                        <p>Your previous blood request records.</p>
+                    </div>
+                </div>
+
+                <div id="historyList" class="empty-state">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <p>No request history available yet.</p>
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATIONS -->
+            <section id="notifications" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Notifications</h2>
+                        <p>Stay updated with BloodBridge.</p>
+                    </div>
+                </div>
+
+                <div id="notificationList" class="empty-state">
+                    <i class="fa-solid fa-bell"></i>
+                    <p>No new notifications.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 BloodBridge | Connecting Lives
+                <i class="fa-solid fa-heart"></i>
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="patient-dashboard.js"></script>
+
+</body>
+
+</html>

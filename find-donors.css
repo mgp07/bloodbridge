@@ -1,0 +1,1211 @@
+
+/* =========================================
+   BLOODBRIDGE - FIND DONORS PAGE
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.find-page {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #182033;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   NAVIGATION BAR - MATCHING HOME PAGE
+   ========================================= */
+
+.fd-header {
+    width: 100%;
+    min-height: 105px;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: linear-gradient(
+        110deg,
+        #ed1725,
+        #a50013,
+        #650008
+    );
+
+    color: #ffffff;
+    border-radius: 0 0 22px 22px;
+
+    box-shadow: 0 5px 20px rgba(100, 0, 10, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.fd-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: #ffffff;
+    color: #c90019;
+
+    border-radius: 50%;
+    font-size: 29px;
+}
+
+.logo-icon i {
+    position: relative;
+}
+
+.logo-icon span {
+    position: absolute;
+    font-size: 19px;
+    font-weight: 800;
+    top: 9px;
+    right: 13px;
+}
+
+
+/* NAVIGATION LINKS */
+
+.fd-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.fd-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 15px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.fd-nav a i {
+    font-size: 14px;
+}
+
+.fd-nav a:hover,
+.fd-nav a.active {
+    background: #ed3948;
+    color: #ffffff;
+}
+
+
+/* JOIN BUTTON */
+
+.fd-nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    border: 1.5px solid #ffffff;
+    border-radius: 30px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.fd-nav-button:hover {
+    background: #ffffff;
+    color: #a50013;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.fd-hero {
+    min-height: 430px;
+    padding: 65px 9%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    background: linear-gradient(
+        120deg,
+        #fff3f4,
+        #fffafa,
+        #fff0f1
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 17px;
+
+    background: #ffe1e4;
+    color: #b30018;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e51c32;
+    box-shadow: 0 0 0 4px rgba(229, 28, 50, 0.12);
+}
+
+.hero-content h1 {
+    margin-top: 22px;
+
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #251b1e;
+}
+
+.hero-content h1 span {
+    color: #d7192d;
+}
+
+.hero-content > p {
+    max-width: 510px;
+    margin-top: 20px;
+
+    color: #69616a;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.hero-points span {
+    color: #50444a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* HERO ILLUSTRATION */
+
+.hero-visual {
+    width: 350px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+.visual-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 250px;
+    height: 250px;
+    background: #ffe0e3;
+}
+
+.circle-two {
+    width: 185px;
+    height: 185px;
+    background: #ffc6cd;
+}
+
+.blood-symbol {
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(145deg, #ed1725, #a50013);
+    color: #ffffff;
+
+    border-radius: 35px;
+    font-size: 75px;
+
+    transform: rotate(-8deg);
+    box-shadow: 0 20px 40px rgba(190, 0, 25, 0.2);
+
+    z-index: 1;
+}
+
+
+/* FLOATING CARDS */
+
+.floating-card {
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 17px;
+
+    background: #ffffff;
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(70, 0, 15, 0.12);
+}
+
+.floating-top {
+    top: 25px;
+    right: -10px;
+}
+
+.floating-bottom {
+    bottom: 20px;
+    left: -20px;
+}
+
+.floating-icon,
+.floating-drop {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background: #ffe5e8;
+    color: #d7192d;
+    font-size: 19px;
+}
+
+.floating-card strong {
+    display: block;
+    color: #251b1e;
+    font-size: 11px;
+}
+
+.floating-card small {
+    display: block;
+    margin-top: 3px;
+    color: #88808a;
+    font-size: 9px;
+}
+
+
+/* =========================================
+   SECTION COMMON STYLES
+   ========================================= */
+
+.eyebrow {
+    color: #d7192d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2,
+.results-heading h2 {
+    margin-top: 10px;
+
+    color: #251b1e;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span,
+.results-heading h2 span {
+    color: #d7192d;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    color: #77717a;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SEARCH SECTION
+   ========================================= */
+
+.fd-search-section {
+    padding: 75px 9%;
+    background: #ffffff;
+}
+
+.search-panel {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 35px 40px;
+
+    background: #ffffff;
+    border: 1px solid #f1e6e8;
+    border-radius: 22px;
+
+    box-shadow: 0 15px 45px rgba(60, 0, 15, 0.07);
+}
+
+.search-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f1e9eb;
+}
+
+.search-panel-top > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-number {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe5e8;
+    color: #c90019;
+
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.search-panel-top h3 {
+    color: #251b1e;
+    font-size: 18px;
+}
+
+.secure-label {
+    color: #b30018;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* FILTER LABELS */
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 27px;
+    margin-bottom: 15px;
+}
+
+.filter-label label {
+    color: #30262b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.filter-label span {
+    color: #9a9096;
+    font-size: 11px;
+}
+
+
+/* BLOOD GROUP BUTTONS */
+
+.blood-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.blood-option {
+    min-width: 65px;
+    padding: 12px 17px;
+
+    background: #ffffff;
+    color: #5c5057;
+
+    border: 1px solid #e9dfe2;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.blood-option:hover,
+.blood-option.selected {
+    background: #d7192d;
+    border-color: #d7192d;
+    color: #ffffff;
+
+    box-shadow: 0 5px 12px rgba(215, 25, 45, 0.16);
+}
+
+
+/* LOCATION SEARCH */
+
+.location-search {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 9px 8px 17px;
+
+    border: 1px solid #e9dfe2;
+    border-radius: 12px;
+
+    background: #ffffff;
+}
+
+.location-icon {
+    color: #d7192d;
+    font-size: 23px;
+}
+
+.location-search input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 5px;
+
+    border: none;
+    outline: none;
+
+    color: #30262b;
+    font-size: 13px;
+}
+
+.location-search input::placeholder {
+    color: #aaa0a5;
+}
+
+.location-search button {
+    padding: 13px 20px;
+
+    background: linear-gradient(110deg, #ed1725, #a50013);
+    color: #ffffff;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.location-search button:hover {
+    background: #650008;
+    transform: translateY(-2px);
+}
+
+.location-search button span {
+    margin-left: 7px;
+}
+
+.search-note {
+    margin-top: 17px;
+
+    color: #91868d;
+    font-size: 10px;
+}
+
+.search-note span {
+    color: #d7192d;
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   RESULTS SECTION
+   ========================================= */
+
+.fd-results {
+    padding: 65px 9%;
+    background: #fff8f9;
+}
+
+.results-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.results-heading h2 {
+    font-size: 30px;
+}
+
+.results-heading p {
+    margin-top: 8px;
+    color: #82777e;
+    font-size: 13px;
+}
+
+.results-count {
+    min-width: 110px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px 22px;
+
+    background: #ffffff;
+    border: 1px solid #f1e2e5;
+    border-radius: 14px;
+}
+
+.results-count strong {
+    color: #d7192d;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.results-count span {
+    color: #8a7d84;
+    font-size: 10px;
+}
+
+
+/* DONOR GRID */
+
+.donor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* DONOR CARDS */
+
+.donor-card {
+    padding: 23px;
+
+    background: #ffffff;
+    border: 1px solid #f0e4e7;
+    border-radius: 17px;
+
+    box-shadow: 0 7px 22px rgba(70, 0, 15, 0.04);
+
+    transition: 0.3s ease;
+}
+
+.donor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(70, 0, 15, 0.09);
+}
+
+.donor-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.donor-avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe5e8;
+    color: #c90019;
+
+    border-radius: 14px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.donor-info h3 {
+    color: #30262b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.donor-info p {
+    margin-top: 4px;
+    color: #9a9096;
+    font-size: 11px;
+}
+
+.blood-badge {
+    margin-left: auto;
+
+    padding: 7px 11px;
+
+    background: #fff0f1;
+    color: #c90019;
+
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.donor-details {
+    padding-top: 15px;
+    border-top: 1px solid #f2eaec;
+}
+
+.donor-details p {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 10px;
+
+    color: #71666d;
+    font-size: 11px;
+}
+
+.donor-details p i {
+    width: 15px;
+    color: #d7192d;
+}
+
+.donor-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px;
+
+    background: #fff0f1;
+    color: #c90019;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.donor-card button:hover {
+    background: #d7192d;
+    color: #ffffff;
+}
+
+
+/* NO RESULTS */
+
+.no-results {
+    padding: 55px 20px;
+    text-align: center;
+
+    background: #ffffff;
+    border: 1px dashed #e7cbd0;
+    border-radius: 18px;
+}
+
+.no-results[hidden] {
+    display: none;
+}
+
+.no-results-icon {
+    color: #d7192d;
+    font-size: 45px;
+}
+
+.no-results h3 {
+    margin-top: 15px;
+    color: #30262b;
+    font-size: 19px;
+}
+
+.no-results p {
+    margin-top: 8px;
+    color: #8a7d84;
+    font-size: 12px;
+}
+
+.no-results button {
+    margin-top: 20px;
+    padding: 11px 22px;
+
+    background: #d7192d;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.demo-warning {
+    margin-top: 25px;
+    text-align: center;
+
+    color: #9a7078;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CALL TO ACTION SECTION
+   ========================================= */
+
+.fd-cta {
+    min-height: 330px;
+    padding: 65px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: linear-gradient(
+        115deg,
+        #650008,
+        #a50013,
+        #ed1725
+    );
+
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.cta-content {
+    max-width: 650px;
+}
+
+.fd-cta .eyebrow {
+    color: #ffc4ca;
+}
+
+.cta-content h2 {
+    margin-top: 17px;
+
+    color: #ffffff;
+    font-size: clamp(27px, 4vw, 39px);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.cta-content h2 span {
+    color: #ffc4ca;
+}
+
+.cta-content p {
+    margin-top: 15px;
+    color: #ffe3e6;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 25px;
+    padding: 14px 23px;
+
+    background: #ffffff;
+    color: #a50013;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ffe1e4;
+    transform: translateY(-3px);
+}
+
+.cta-symbol {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 150px;
+}
+
+
+/* =========================================
+   FOOTER - MATCHING HOME PAGE
+   ========================================= */
+
+.fd-footer {
+    min-height: 90px;
+    padding: 20px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: #251b1e;
+    color: #ffffff;
+}
+
+.footer-left p {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-left p i {
+    margin-left: 5px;
+    color: #ed3948;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ed3948;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    color: #bdb1b5;
+    font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - TABLETS
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .fd-header {
+        padding: 15px 3%;
+        gap: 12px;
+    }
+
+    .fd-logo {
+        font-size: 21px;
+    }
+
+    .logo-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+    .fd-nav {
+        gap: 3px;
+    }
+
+    .fd-nav a {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .fd-nav-button {
+        padding: 11px 15px;
+        font-size: 11px;
+    }
+
+    .donor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - MOBILE
+   ========================================= */
+
+@media (max-width: 760px) {
+
+    .fd-header {
+        flex-direction: column;
+        padding: 18px 15px;
+        gap: 17px;
+    }
+
+    .fd-logo {
+        font-size: 23px;
+    }
+
+    .fd-nav {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .fd-nav a {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .fd-nav-button {
+        padding: 10px 20px;
+    }
+
+
+    /* HERO */
+
+    .fd-hero {
+        padding: 50px 7%;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+    }
+
+    .hero-points {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .floating-top {
+        right: 0;
+    }
+
+    .floating-bottom {
+        left: 0;
+    }
+
+
+    /* SEARCH */
+
+    .fd-search-section {
+        padding: 55px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .search-panel {
+        padding: 25px 20px;
+    }
+
+    .blood-groups {
+        gap: 8px;
+    }
+
+    .blood-option {
+        min-width: 55px;
+        padding: 10px 13px;
+    }
+
+    .location-search {
+        flex-wrap: wrap;
+    }
+
+    .location-search input {
+        flex: 1;
+    }
+
+    .location-search button {
+        width: 100%;
+    }
+
+
+    /* RESULTS */
+
+    .fd-results {
+        padding: 50px 6%;
+    }
+
+    .results-heading {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .results-heading h2 {
+        font-size: 25px;
+    }
+
+    .results-count {
+        min-width: 85px;
+        padding: 12px;
+    }
+
+    .donor-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CTA */
+
+    .fd-cta {
+        padding: 50px 7%;
+        text-align: center;
+    }
+
+    .cta-symbol {
+        display: none;
+    }
+
+    .cta-content h2 {
+        font-size: 28px;
+    }
+
+
+    /* FOOTER */
+
+    .fd-footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE DEVICES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .fd-nav a {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .floating-card {
+        padding: 10px;
+    }
+
+    .floating-card strong {
+        font-size: 9px;
+    }
+
+    .floating-card small {
+        font-size: 8px;
+    }
+
+    .search-panel {
+        padding: 22px 15px;
+    }
+
+    .results-heading {
+        flex-direction: column;
+    }
+
+}

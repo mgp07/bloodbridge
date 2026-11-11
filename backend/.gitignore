@@ -1,0 +1,26 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# SSL certificates
+*.pem
+
+# Dependencies
+node_modules/
+
+# Old backend backup
+backend_old/
+
+# Build files
+.next/
+dist/
+build/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | BloodBridge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">Blood<span>Bridge</span></div>
+            <p class="brand-tagline">Admin Portal</p>
+
+            <nav class="sidebar-menu">
+
+                <a href="#dashboard" class="menu-item active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#donors" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Manage Donors</span>
+                </a>
+
+                <a href="#patients" class="menu-item">
+                    <i class="fas fa-user-injured"></i>
+                    <span>Manage Patients</span>
+                </a>
+
+                <a href="#hospitals" class="menu-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>Manage Hospitals</span>
+                </a>
+
+                <a href="#requests" class="menu-item">
+                    <i class="fas fa-tint"></i>
+                    <span>Blood Requests</span>
+                </a>
+
+                <a href="#donations" class="menu-item">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <span>Donation Records</span>
+                </a>
+
+                <a href="#notifications" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutButton">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar" id="dashboard">
+
+                <div>
+                    <h2>Admin Dashboard</h2>
+                    <p>Monitor and manage the BloodBridge platform.</p>
+                </div>
+
+                <button id="notificationButton">
+                    <i class="fas fa-bell"></i>
+                </button>
+
+            </header>
+
+
+            <!-- WELCOME BANNER -->
+
+            <section class="welcome-banner">
+
+                <div>
+                    <h1>Welcome, <span id="adminName">Administrator</span>!</h1>
+                    <p>Manage the platform and help connect people who need blood.</p>
+                </div>
+
+                <i class="fas fa-user-shield"></i>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 id="totalDonors">0</h3>
+                    <p>Total Donors</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h3 id="totalPatients">0</h3>
+                    <p>Total Patients</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 id="totalHospitals">0</h3>
+                    <p>Total Hospitals</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 id="totalBloodRequests">0</h3>
+                    <p>Blood Requests</p>
+                </div>
+
+            </section>
+
+
+            <!-- DONOR MANAGEMENT -->
+
+            <section class="content-card" id="donors">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-users"></i>
+                    Manage Donors
+                </h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Donor Name</th>
+                                <th>Email</th>
+                                <th>Blood Group</th>
+                                <th>City</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="donorTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- PATIENT MANAGEMENT -->
+
+            <section class="content-card" id="patients">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-user-injured"></i>
+                    Manage Patients
+                </h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Patient Name</th>
+                                <th>Email</th>
+                                <th>Blood Group</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- HOSPITAL MANAGEMENT -->
+
+            <section class="content-card" id="hospitals">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-hospital"></i>
+                    Manage Hospitals
+                </h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Hospital Name</th>
+                                <th>Email</th>
+                                <th>Registration No.</th>
+                                <th>City</th>
+                                <th>Verification</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="hospitalTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- BLOOD REQUEST MANAGEMENT -->
+
+            <section class="content-card" id="requests">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-tint"></i>
+                    Manage Blood Requests
+                </h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Blood Group</th>
+                                <th>Units</th>
+                                <th>Hospital</th>
+                                <th>Urgency</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="requestTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- DONATION RECORDS -->
+
+            <section class="content-card" id="donations">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    Donation Records
+                </h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Donor Name</th>
+                                <th>Blood Group</th>
+                                <th>Hospital</th>
+                                <th>Donation Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="donationTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <section class="content-card" id="notifications">
+
+                <h3 class="section-heading">
+                    <i class="fas fa-bell"></i>
+                    Admin Notifications
+                </h3>
+
+                <div id="notificationList" class="notification-list">
+
+                    <div class="empty-state">
+                        No new notifications.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+                <p>© 2026 BloodBridge | Connecting Lives, Saving Lives.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

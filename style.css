@@ -1,0 +1,1810 @@
+/* =========================================
+   BLOODBRIDGE WEBSITE
+   COMPLETE STYLESHEET
+========================================= */
+
+
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff5f5;
+    color: #24191b;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 105px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 10;
+
+    background: linear-gradient(
+        110deg,
+        #ed1725,
+        #a50013,
+        #650008
+    );
+
+    color: white;
+
+    border-radius: 0 0 50% 3% / 0 0 12% 3%;
+
+    box-shadow: 0 5px 20px #80001030;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-icon {
+    position: relative;
+    font-size: 65px;
+    color: white;
+    line-height: 1;
+}
+
+.logo-icon span {
+    position: absolute;
+    top: 28%;
+    left: 37%;
+
+    color: #c90019;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.logo-text h1 {
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-text p {
+    font-size: 14px;
+    font-style: italic;
+    color: #ffe2e2;
+    margin-top: 2px;
+}
+
+
+/* NAVIGATION LINKS */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    color: white;
+
+    padding: 13px 15px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.navigation a i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #ed3948;
+    transform: translateY(-2px);
+}
+
+
+/* JOIN BUTTON */
+
+.join-btn {
+    background: transparent;
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    color: white;
+
+    padding: 12px 24px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.join-btn i {
+    color: #ff4253;
+    margin-left: 5px;
+}
+
+.join-btn:hover {
+    background: white;
+    color: #a50013;
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 420px;
+
+    padding: 55px 5% 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            #ffd0d0 0,
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #fffafa,
+            #ffe5e5
+        );
+}
+
+
+/* LEFT HERO CONTENT */
+
+.hero-content {
+    flex: 1 1 55%;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* HERO TAG */
+
+.hero-tag {
+    display: inline-block;
+
+    background: #ffd5d5;
+    color: #9e0015;
+
+    padding: 9px 20px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+.hero-tag i {
+    color: #d90020;
+    margin-left: 5px;
+}
+
+
+/* MAIN HEADING */
+
+.hero-title {
+    font-size: clamp(42px, 5.5vw, 75px);
+
+    font-weight: 800;
+
+    color: #a90018;
+
+    letter-spacing: -2px;
+
+    margin: 0 0 10px;
+}
+
+.hero-title span {
+    color: #171313;
+}
+
+
+/* HEARTBEAT ICON */
+
+.heartbeat {
+    color: #c90020;
+
+    font-size: 35px;
+
+    animation: heartbeat 1.3s infinite;
+
+    vertical-align: middle;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* HERO SUBHEADING */
+
+.hero-heading {
+    font-size: clamp(17px, 2vw, 25px);
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+.hero-heading span {
+    color: #b00019;
+    font-weight: 800;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #4f4242;
+
+    max-width: 570px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   4. HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 25px;
+
+    border-radius: 35px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: linear-gradient(
+        120deg,
+        #ed1725,
+        #b00019
+    );
+
+    border: 2px solid #c50019;
+
+    color: white;
+
+    box-shadow: 0 6px 15px #b0001930;
+}
+
+.secondary-btn {
+    background: transparent;
+
+    border: 2px solid #bd001b;
+
+    color: #a50018;
+}
+
+.primary-btn i,
+.secondary-btn i {
+    margin: 0 5px;
+}
+
+.primary-btn:hover {
+    background: #85000e;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px #b0001940;
+}
+
+.secondary-btn:hover {
+    background: #b00019;
+    color: white;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   5. HERO IMAGE / ARTWORK
+========================================= */
+
+.hero-visual {
+    flex: 1 1 40%;
+
+    min-height: 350px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* BACKGROUND MAP DECORATION */
+
+.world-map {
+    position: absolute;
+
+    width: 320px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: #f7baba;
+
+    opacity: 0.2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 130px;
+    color: #b9001b;
+}
+
+
+/* HEART DECORATION */
+
+.heart-decoration {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    border: 12px solid #c90020;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #d90020;
+
+    font-size: 100px;
+
+    opacity: 0.85;
+
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* BLOOD DROP */
+
+.blood-drop-art {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #ff5555,
+        #cf001c,
+        #85000c
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 3;
+
+    box-shadow:
+        0 15px 35px #b9001b55,
+        inset 0 0 20px #ff9999;
+
+    animation: floatDrop 3s ease-in-out infinite;
+}
+
+.blood-drop-art i {
+    color: #ffb6b6;
+    font-size: 105px;
+    filter: drop-shadow(0 5px 5px #65000a);
+}
+
+.blood-drop-art span {
+    position: absolute;
+
+    color: white;
+
+    font-size: 55px;
+    font-weight: 800;
+}
+
+@keyframes floatDrop {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* HANDS ILLUSTRATION */
+
+.hands-art {
+    position: absolute;
+
+    bottom: 2px;
+
+    z-index: 4;
+
+    font-size: 85px;
+
+    color: #d87972;
+
+    opacity: 0.85;
+}
+
+
+/* HERO QUOTE */
+
+.hero-quote {
+    position: absolute;
+
+    right: 0;
+    top: 45px;
+
+    z-index: 5;
+
+    color: #261719;
+
+    font-style: italic;
+}
+
+.hero-quote h2 {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.hero-quote i {
+    color: #d40020;
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   6. FEATURE CARDS
+========================================= */
+
+.features {
+    padding: 15px 5% 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    background: #ffe9e9;
+}
+
+
+/* CARD DESIGN */
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.88);
+
+    min-height: 165px;
+
+    padding: 20px 15px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    border: 1px solid #f7d0d0;
+
+    box-shadow: 0 7px 20px #a9001415;
+
+    transition: 0.35s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px #a9001430;
+
+    border-color: #ed8990;
+}
+
+
+/* CARD ICONS */
+
+.feature-icon {
+    font-size: 43px;
+
+    color: #c60020;
+
+    margin-bottom: 8px;
+}
+
+.feature-card:nth-child(2) .feature-icon {
+    color: #d93650;
+}
+
+.feature-card:nth-child(3) .feature-icon {
+    color: #a90018;
+}
+
+.feature-card:nth-child(4) .feature-icon {
+    color: #bd2638;
+}
+
+
+/* CARD HEADINGS */
+
+.feature-card h3 {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+
+/* CARD PARAGRAPH */
+
+.feature-card p {
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #514444;
+}
+
+
+/* =========================================
+   7. FORM CONTAINERS
+========================================= */
+
+.form-container {
+    display: none;
+
+    max-width: 520px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px #a9001420;
+
+    border: 1px solid #f4cccc;
+
+    scroll-margin-top: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+
+    color: #b00019;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.form-description {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* FORM LABELS */
+
+.form-container label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+
+    color: #3d2929;
+}
+
+
+/* FORM INPUTS */
+
+.form-container input,
+.form-container select {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 7px;
+
+    border: 1px solid #e0caca;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    background: #fffafa;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #c0001b;
+
+    box-shadow: 0 0 0 3px #c0001b15;
+}
+
+
+/* SUBMIT BUTTON */
+
+.submit-btn {
+    width: 100%;
+
+    background: linear-gradient(
+        120deg,
+        #e91e30,
+        #a80017
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 15px;
+
+    margin-top: 22px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #78000e;
+
+    transform: translateY(-3px);
+}
+
+
+/* CLOSE BUTTON */
+
+.close-btn {
+    background: #777;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 10px 25px;
+
+    margin-top: 15px;
+}
+
+.close-btn:hover {
+    background: #444;
+}
+
+
+/* FORM MESSAGES */
+
+.message {
+    color: #16803d;
+
+    text-align: center;
+
+    font-weight: 600;
+
+    margin-top: 15px;
+}
+
+.error-message {
+    color: #c00020;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+.info-message {
+    background: #fff3e0;
+
+    color: #86500c;
+
+    font-size: 13px;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    margin-top: 12px;
+
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   8. SLOGAN BANNER
+========================================= */
+
+.slogan-banner {
+    min-height: 95px;
+
+    padding: 20px 5%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        100deg,
+        #b00018,
+        #71000c,
+        #a90017
+    );
+
+    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+}
+
+.slogan-banner h2 {
+    font-size: clamp(16px, 2vw, 24px);
+
+    font-weight: 600;
+
+    font-style: italic;
+}
+
+.slogan-banner h2 span {
+    margin: 0 10px;
+    color: #ffaaaa;
+}
+
+.slogan-banner h2 i {
+    color: #ffb6b6;
+    margin-left: 10px;
+}
+
+.slogan-banner > i {
+    font-size: 35px;
+    color: #ffc5c5;
+}
+
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
+footer {
+    min-height: 65px;
+
+    padding: 15px 5%;
+
+    background: #251b1e;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.footer-left p {
+    font-size: 14px;
+}
+
+.footer-left i {
+    color: #ed263b;
+}
+
+
+/* SOCIAL MEDIA ICONS */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #271c20;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #ed263b;
+    color: white;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   10. RESPONSIVE DESIGN
+========================================= */
+
+
+/* TABLETS */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+    }
+
+    .hero {
+        padding: 45px 4%;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-quote {
+        display: none;
+    }
+
+}
+
+
+/* MOBILE DEVICES */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 12px;
+
+        border-radius: 0;
+
+        gap: 15px;
+    }
+
+    .logo-icon {
+        font-size: 48px;
+    }
+
+    .logo-text h1 {
+        font-size: 25px;
+    }
+
+    .logo-text p {
+        font-size: 11px;
+    }
+
+    .navigation {
+        gap: 3px;
+    }
+
+    .navigation a {
+        padding: 9px;
+
+        font-size: 11px;
+    }
+
+    .navigation a i {
+        font-size: 12px;
+    }
+
+    .join-btn {
+        padding: 9px 18px;
+    }
+
+
+    /* HERO MOBILE */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 40px 18px 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 43px;
+    }
+
+    .heartbeat {
+        font-size: 25px;
+    }
+
+    .hero-heading {
+        font-size: 17px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 280px;
+    }
+
+    .heart-decoration {
+        width: 210px;
+        height: 210px;
+    }
+
+    .blood-drop-art {
+        width: 145px;
+        height: 145px;
+    }
+
+    .blood-drop-art i {
+        font-size: 80px;
+    }
+
+    .blood-drop-art span {
+        font-size: 40px;
+    }
+
+    .hands-art {
+        font-size: 65px;
+    }
+
+
+    /* FEATURE MOBILE */
+
+    .features {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .feature-card {
+        min-height: 145px;
+    }
+
+
+    /* FORMS */
+
+    .form-container {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+
+    /* SLOGAN */
+
+    .slogan-banner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px 12px;
+    }
+
+    .slogan-banner h2 {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .slogan-banner > i {
+        font-size: 22px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   END OF BLOODBRIDGE CSS
+========================================= */
+/* =========================================
+   BLOODBRIDGE ABOUT PAGE
+========================================= */
+
+.about-page {
+    background: #fffafa;
+    color: #292126;
+}
+
+/* ABOUT NAVIGATION */
+
+.about-page .navbar .logo {
+    color: white;
+}
+
+.about-page .navbar .logo-icon {
+    color: white;
+}
+
+.about-join-btn {
+    text-decoration: none;
+    background: white;
+    color: #ad001b;
+    padding: 12px 23px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.about-join-btn:hover {
+    background: #ffe0e0;
+    transform: translateY(-3px);
+}
+
+/* COMMON SECTION HEADING */
+
+.section-label {
+    display: inline-block;
+    color: #c00025;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 span {
+    color: #c00025;
+}
+
+.section-heading > p {
+    color: #766a6d;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ABOUT HERO */
+
+.about-hero {
+    min-height: 490px;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 40%,
+        #ffd0d5, transparent 30%),
+        linear-gradient(120deg,
+        #fffafa, #ffe9eb);
+}
+
+.about-hero-content {
+    flex: 1;
+    max-width: 620px;
+}
+
+.about-label {
+    display: inline-block;
+    background: #ffe0e3;
+    color: #b00020;
+    padding: 10px 19px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.about-hero-content h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-hero-content h2 span {
+    color: #bd001e;
+}
+
+.about-hero-content > p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #62575a;
+    margin-bottom: 25px;
+}
+
+.about-main-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(120deg,
+        #ec243a, #a50019);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px #b0001930;
+    transition: 0.3s;
+}
+
+.about-main-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px #b0001945;
+}
+
+/* HERO ARTWORK */
+
+.about-hero-art {
+    flex: 1;
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-art-circle {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+        #ffc0c7, #f7dadd);
+    border: 12px solid #ffffff;
+    box-shadow: 0 15px 40px #9c001b20;
+}
+
+.about-art-heart {
+    position: absolute;
+    font-size: 65px;
+    color: #b90025;
+    top: 10px;
+    right: 25px;
+    animation: floatHeart 3s infinite ease-in-out;
+}
+
+.about-art-drop {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle at 35% 25%,
+        #ff6877, #d00025 65%, #790014);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffc3c9;
+    font-size: 100px;
+    box-shadow: 0 15px 35px #a0002840;
+    z-index: 2;
+    animation: floatDrop 3s infinite ease-in-out;
+}
+
+.about-art-drop span {
+    position: absolute;
+    color: white;
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.about-art-message {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    background: white;
+    padding: 17px 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #65001420;
+    text-align: center;
+    color: #b00020;
+}
+
+.about-art-message i {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.about-art-message p {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* OUR STORY */
+
+.about-story {
+    padding: 85px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    background: white;
+}
+
+.story-image {
+    min-height: 350px;
+    border-radius: 30px;
+    background: linear-gradient(140deg,
+        #b80024, #f14b60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px #9c001b25;
+}
+
+.story-image::before,
+.story-image::after {
+    content: "";
+    position: absolute;
+    border: 2px solid #ffffff35;
+    border-radius: 50%;
+}
+
+.story-image::before {
+    width: 280px;
+    height: 280px;
+}
+
+.story-image::after {
+    width: 370px;
+    height: 370px;
+}
+
+.story-image-icon {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 130px;
+}
+
+.story-image-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    background: #ffffffeb;
+    padding: 15px;
+    border-radius: 15px;
+    color: #ad001b;
+    font-weight: 700;
+    z-index: 3;
+}
+
+.story-image-caption i {
+    margin-right: 8px;
+}
+
+.story-content h2 {
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.story-content h2 span {
+    color: #c00025;
+}
+
+.story-content > p {
+    font-size: 14px;
+    color: #716569;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.story-highlight {
+    background: #fff0f1;
+    border-left: 4px solid #c00025;
+    padding: 17px;
+    margin-top: 20px;
+    border-radius: 0 12px 12px 0;
+    color: #b00020;
+}
+
+.story-highlight i {
+    font-size: 22px;
+}
+
+.story-highlight p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* MISSION AND VISION */
+
+.mission-section {
+    padding: 85px 8%;
+    background: #fff3f4;
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.mission-card {
+    background: white;
+    border: 1px solid #f5d9dc;
+    padding: 35px;
+    border-radius: 23px;
+    box-shadow: 0 8px 25px #87001b0c;
+    transition: 0.3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px #87001b18;
+}
+
+.mission-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe3e6;
+    color: #bd001f;
+    font-size: 29px;
+    margin-bottom: 20px;
+}
+
+.mission-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.mission-card p {
+    color: #72666a;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.vision-card .mission-icon {
+    background: #fce9ef;
+}
+
+/* WHY BLOODBRIDGE */
+
+.why-section {
+    padding: 85px 7%;
+    background: white;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.why-card {
+    padding: 30px 20px;
+    text-align: center;
+    background: #fffafa;
+    border: 1px solid #f4dfe2;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    background: #fff0f2;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px #8a001b15;
+}
+
+.why-card > i {
+    font-size: 38px;
+    color: #c00025;
+    margin-bottom: 18px;
+}
+
+.why-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    font-size: 13px;
+    color: #75686b;
+    line-height: 1.8;
+}
+
+/* HOW IT WORKS */
+
+.how-section {
+    padding: 85px 7%;
+    background: #fff2f3;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.step-card {
+    flex: 1;
+    max-width: 300px;
+    min-height: 245px;
+    background: white;
+    border-radius: 22px;
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 25px #8a001b10;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-7px);
+}
+
+.step-number {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 25px;
+    color: #f4cbd0;
+    font-weight: 800;
+}
+
+.step-card > i {
+    color: #c00025;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.step-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #75686b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.step-connector {
+    color: #c00025;
+    font-size: 24px;
+}
+
+/* CALL TO ACTION */
+
+.about-cta {
+    padding: 75px 20px;
+    text-align: center;
+    background: linear-gradient(120deg,
+        #e91e39, #970018, #61000d);
+    color: white;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta-content > i {
+    font-size: 45px;
+    margin-bottom: 18px;
+    animation: heartbeat 1.3s infinite;
+}
+
+.cta-content h2 {
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ffe0e4;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: white;
+    color: #a9001d;
+    padding: 15px 27px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cta-btn i {
+    margin-left: 8px;
+}
+
+.cta-btn:hover {
+    background: #ffe2e5;
+    transform: translateY(-4px);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .about-page .navbar {
+        justify-content: center;
+    }
+
+    .about-page .navigation {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-hero {
+        padding: 50px 5%;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-container {
+        flex-wrap: wrap;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    .step-card {
+        flex: 1 1 250px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 20px;
+    }
+
+    .about-hero-content > p {
+        font-size: 14px;
+    }
+
+    .about-hero-art {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .about-art-circle {
+        width: 245px;
+        height: 245px;
+    }
+
+    .about-art-drop {
+        width: 135px;
+        height: 135px;
+        font-size: 75px;
+    }
+
+    .about-art-drop span {
+        font-size: 35px;
+    }
+
+    .about-art-message {
+        right: 0;
+    }
+
+    .about-story {
+        grid-template-columns: 1fr;
+        padding: 55px 20px;
+        gap: 35px;
+    }
+
+    .story-image {
+        min-height: 270px;
+    }
+
+    .story-image-icon {
+        font-size: 95px;
+    }
+
+    .mission-section,
+    .why-section,
+    .how-section {
+        padding: 60px 20px;
+    }
+
+    .mission-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-cta {
+        padding: 60px 20px;
+    }
+
+}

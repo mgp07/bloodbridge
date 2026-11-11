@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Blood Donors | BloodBridge</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="find-donors.css">
+</head>
+
+<body class="find-page">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fd-header">
+
+        <a href="index.html#home" class="fd-logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-droplet"></i>
+                <span>+</span>
+            </span>
+
+            <span>BloodBridge</span>
+        </a>
+
+        <nav class="fd-nav">
+
+            <a href="index.html#home">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
+
+            <a href="find-donors.html" class="active">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Find Donors
+            </a>
+
+            <a href="index.html#requestForm">
+                <i class="fa-solid fa-droplet"></i>
+                Request Blood
+            </a>
+
+            <a href="index.html#contact">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+
+        </nav>
+
+        <a href="index.html#donorForm" class="fd-nav-button">
+            Join Us
+            <i class="fa-solid fa-heart"></i>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="fd-hero">
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    <span class="pulse-dot"></span>
+                    EVERY DROP MATTERS
+                </div>
+
+                <h1>
+                    Find a Donor.<br>
+                    <span>Save a Life.</span>
+                </h1>
+
+                <p>
+                    Every second counts during an emergency.
+                    Find potential blood donors and bring hope
+                    to someone who needs it.
+                </p>
+
+                <div class="hero-points">
+                    <span>✓ Simple search</span>
+                    <span>✓ Eight blood groups</span>
+                    <span>✓ Community driven</span>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="visual-circle circle-one"></div>
+                <div class="visual-circle circle-two"></div>
+
+                <div class="blood-symbol">✚</div>
+
+                <div class="floating-card floating-top">
+                    <span class="floating-icon">♥</span>
+
+                    <div>
+                        <strong>Be someone's hope</strong>
+                        <small>Your donation matters</small>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-bottom">
+                    <span class="floating-drop">●</span>
+
+                    <div>
+                        <strong>One donation</strong>
+                        <small>Can help save lives</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH SECTION -->
+        <section class="fd-search-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">DONOR DIRECTORY</span>
+
+                <h2>
+                    Find the right <span>blood donor</span>
+                </h2>
+
+                <p>
+                    Choose a blood group and enter a location to search.
+                </p>
+
+            </div>
+
+
+            <div class="search-panel">
+
+                <div class="search-panel-top">
+
+                    <div>
+                        <span class="search-number">01</span>
+                        <h3>Search donors</h3>
+                    </div>
+
+                    <span class="secure-label">
+                        ✦ Easy &amp; simple
+                    </span>
+
+                </div>
+
+
+                <!-- BLOOD GROUP FILTER -->
+                <div class="filter-label">
+
+                    <label>Select blood group</label>
+
+                    <span>Choose one option</span>
+
+                </div>
+
+
+                <div class="blood-groups" id="bloodGroups">
+
+                    <button type="button" class="blood-option selected" data-group="All">All</button>
+
+                    <button type="button" class="blood-option" data-group="A+">A+</button>
+
+                    <button type="button" class="blood-option" data-group="A-">A−</button>
+
+                    <button type="button" class="blood-option" data-group="B+">B+</button>
+
+                    <button type="button" class="blood-option" data-group="B-">B−</button>
+
+                    <button type="button" class="blood-option" data-group="AB+">AB+</button>
+
+                    <button type="button" class="blood-option" data-group="AB-">AB−</button>
+
+                    <button type="button" class="blood-option" data-group="O+">O+</button>
+
+                    <button type="button" class="blood-option" data-group="O-">O−</button>
+
+                </div>
+
+
+                <!-- LOCATION SEARCH -->
+                <div class="filter-label location-label">
+
+                    <label for="locationInput">Your location</label>
+
+                    <span>City, town or area</span>
+
+                </div>
+
+
+                <div class="location-search">
+
+                    <span class="location-icon">⌖</span>
+
+                    <input type="text" id="locationInput" placeholder="Enter location, e.g. Mangaluru">
+
+                    <button type="button" id="searchButton">
+                        Search Donors <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <p class="search-note">
+                    <span>ⓘ</span>
+                    Search results are demonstration profiles until a real database is connected.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DONOR RESULTS SECTION -->
+        <section class="fd-results">
+
+            <div class="results-heading">
+
+                <div>
+
+                    <span class="eyebrow">COMMUNITY CONNECTION</span>
+
+                    <h2>
+                        Potential <span>donors</span>
+                    </h2>
+
+                    <p id="resultsDescription">
+                        Explore sample donor profiles.
+                    </p>
+
+                </div>
+
+
+                <div class="results-count">
+
+                    <strong id="resultCount">0</strong>
+
+                    <span>Profiles shown</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DONOR CARDS WILL BE DISPLAYED HERE -->
+            <div class="donor-grid" id="donorGrid">
+                <!-- JavaScript generates donor cards -->
+            </div>
+
+
+            <!-- NO RESULTS MESSAGE -->
+            <div class="no-results" id="noResults" hidden>
+
+                <div class="no-results-icon">⌕</div>
+
+                <h3>No matching profiles found</h3>
+
+                <p>
+                    Try another blood group or location.
+                </p>
+
+                <button type="button" id="resetButton">
+                    Clear filters
+                </button>
+
+            </div>
+
+
+            <p class="demo-warning">
+                Demo only: these profiles are fictional examples,
+                not real registered donors. Do not use them for
+                medical emergencies.
+            </p>
+
+        </section>
+
+
+        <!-- CALL TO ACTION SECTION -->
+        <section class="fd-cta">
+
+            <div class="cta-content">
+
+                <span class="eyebrow">
+                    BE THE REASON SOMEONE SMILES
+                </span>
+
+                <h2>
+                    Your blood can give someone<br>
+                    <span>another tomorrow.</span>
+                </h2>
+
+                <p>
+                    Join the BloodBridge community and take a step
+                    towards saving lives.
+                </p>
+
+                <a href="index.html#donorForm" class="cta-button">
+                    Register as a Donor <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="cta-symbol">♥</div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="fd-footer" id="contact">
+
+        <div class="footer-left">
+
+            <p>
+                © 2026 BloodBridge |
+                Connecting Lives
+                <i class="fa-solid fa-heart"></i>
+            </p>
+
+        </div>
+
+
+        <div class="social-icons">
+
+            <a href="#contact" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#contact" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#contact" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#contact" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </div>
+
+
+        <span class="copyright">
+            Made with ♥ for humanity.
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="find-donors.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | BloodBridge</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="login-navbar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">
+                <i class="fa-solid fa-droplet"></i>
+                <span>+</span>
+            </span>
+
+            <span>BloodBridge</span>
+        </a>
+
+        <a href="index.html" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- MAIN LOGIN SECTION -->
+    <main class="login-container">
+
+        <!-- LOGIN FORM -->
+        <section class="login-card">
+
+            <div class="login-heading">
+
+                <div class="login-icon">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+
+                <span class="login-label">WELCOME BACK</span>
+
+                <h1>Login to <span>BloodBridge</span></h1>
+
+                <p>
+                    Sign in to continue your journey of saving lives.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <!-- ROLE -->
+                <div class="form-group">
+
+                    <label for="role">Select your role</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-users"></i>
+
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>
+                                Choose your account type
+                            </option>
+
+                            <option value="donor">Donor</option>
+                            <option value="patient">Patient</option>
+                            <option value="hospital">Hospital</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">Email address</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email" id="email" name="email" placeholder="Enter your registered email"
+                            autocomplete="email" required>
+                    </div>
+
+                </div>
+
+<!-- PASSWORD -->
+<div class="form-group">
+
+    <label for="password">Password</label>
+
+    <div class="input-box password-box">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input type="password" id="password" name="password" placeholder="Enter your password"
+            autocomplete="current-password" required>
+
+        <button type="button" class="password-toggle" id="togglePassword" aria-label="Show password"
+            aria-pressed="false">
+            <i class="fa-solid fa-eye"></i>
+        </button>
+
+    </div>
+
+</div>
+
+                <!-- REMEMBER AND FORGOT -->
+                <div class="login-options">
+
+                    <label class="remember-option">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+
+                    <button type="button" id="forgotPassword" class="forgot-button">
+
+                        Forgot password?
+
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+                <button type="submit" class="login-button">
+
+                    Login to Account
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- MESSAGE -->
+                <p id="loginMessage" class="login-message" role="status"></p>
+
+            </form>
+
+
+            <!-- REGISTER LINK -->
+            <div class="register-link">
+
+                <p>
+                    Don't have an account?
+                    <a href="register.html">Create an account</a>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMATION PANEL -->
+        <section class="login-information">
+
+            <div class="information-content">
+
+                <span class="information-label">
+                    TOGETHER WE CAN MAKE A DIFFERENCE
+                </span>
+
+                <h2>
+                    One account.<br>
+                    One community.<br>
+                    <span>Countless lives.</span>
+                </h2>
+
+                <p>
+                    BloodBridge connects donors, patients and hospitals
+                    to make blood donation easier and more accessible.
+                </p>
+
+                <div class="information-points">
+
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Be someone's reason to smile</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span>Connect with people who need help</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <span>A community built around saving lives</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="information-decoration">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="login-footer">
+
+        <p>
+            © 2026 BloodBridge | Connecting Lives
+            <i class="fa-solid fa-heart"></i>
+        </p>
+
+    </footer>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
